@@ -1,10 +1,9 @@
 class Animal:
-    alive = True
-    fed = False
-    name = None
 
-    def __init__(self, name):
+    def __init__(self, name, alive=True, fed=False):
         self.name = name
+        self.alive = alive
+        self.fed = fed
 
     def eat(self, food):
         if food.edible:
@@ -25,22 +24,19 @@ class Predator(Animal):
 
 class Plant:
 
-    edible = False
-
-    def __init__(self, name):
+    def __init__(self, name, edible=False):
         self.name = name
+        self.edible = edible
 
 
 class Flower(Plant):
     pass
 
+
 class Fruit(Plant):
-    edible = True
-
-
-
-
-
+    def __init__(self, name):
+        super().__init__(name)
+        self.edible = True
 
 
 a1 = Predator('Волк с Уолл-Стрит')
@@ -57,4 +53,7 @@ a1.eat(p1)
 a2.eat(p2)
 print(a1.alive)
 print(a2.fed)
+
+# Атрибуты alive, fed и edible, должны принадлежать объекту, а не классу,
+# как в вашем решении. Важно, чтобы до них можно было достучаться указателем self.
 
