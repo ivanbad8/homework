@@ -12,16 +12,16 @@ class Vehicle:
 
 
     def get_horsepower(self):
-        print(f'Мощность двигателя {self.__engine_power}')
+        print(f'Мощность двигателя: {self.__engine_power}')
 
     def get_color(self):
         print(f'Цвет: {self.__color}')
 
 
     def print_info(self):
-        print(Vehicle.get_model)
-        print(Vehicle.get_horsepower)
-        print(Vehicle.get_color)
+        Vehicle.get_model(self)
+        Vehicle.get_horsepower(self)
+        Vehicle.get_color(self)
         print(f'Владелец: {self.owner}')
 
 
@@ -34,6 +34,7 @@ class Vehicle:
 
 class Sedan(Vehicle):
     __PASSENGERS_LIMIT = 5
+
 
 
 # Текущие цвета __COLOR_VARIANTS = ['blue', 'red', 'green', 'black', 'white']
@@ -49,4 +50,4 @@ vehicle1.owner = 'Vasyok'
 
 # Проверяем что поменялось
 vehicle1.print_info()
-vehicle1.get_horsepower()
+
