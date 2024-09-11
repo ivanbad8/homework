@@ -11,6 +11,8 @@ class Product:
 class Shop:
     def __init__(self):
         self.__file_name = 'products.txt'
+        file = open(self.__file_name, 'a+')
+        file.close()
 
     def get_products(self):
         self.__file_name = 'products.txt'
