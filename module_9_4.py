@@ -1,6 +1,4 @@
 # Lambda-функция:
-import random
-
 first = 'Мама мыла раму'
 second = 'Рамена мало было'
 
@@ -11,7 +9,6 @@ print(result)
 
 
 # Замыкание:
-
 def get_advanced_writer(file_name):
     file = open(file_name, 'a+')
     file.close()
@@ -29,8 +26,7 @@ write = get_advanced_writer('example.txt')
 write('Это строчка', ['А', 'это', 'уже', 'число', 5, 'в', 'списке'])
 
 # Метод __call__:
-
-from random import choice
+import random
 class MysticBall:
     def __init__(self, *words):
         self.words = words
