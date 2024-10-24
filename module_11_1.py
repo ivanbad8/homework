@@ -9,7 +9,9 @@ response = requests.get('https://www.yandex.ru')
 print(response.status_code) #200 — «OK». Запрос прошёл успешно, и мы получили ответ
 print(response.text)  # Вывод HTML-кода страницы
 print(response.headers) # Вывод заголовков ответа
+
 print('numpy ---------------------------------------------------------------------')
+
 num_ = [1,2,'3','4',5,6]
 num = np.array(num_,'int')
 print(num)
