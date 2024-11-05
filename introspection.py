@@ -1,23 +1,23 @@
+import inspect
+
+
 def introspection_info(obj):
     obj_type = type(obj).__name__
 
     attributes = []
     for attr in dir(obj):
-        if not callable(getattr(obj, attr)) and not attr.startswith("__"):
+        if not callable(getattr(obj, attr)):
             attributes.append(attr)
 
     methods = []
     for method in dir(obj):
-        if callable(getattr(obj, method)) and not method.startswith("__"):
+        if callable(getattr(obj, method)):
             methods.append(method)
 
-    obj_module = obj.__module__
+    obj_module = inspect.getmodule(obj)
 
-    result = {
-        'type': obj_type,
-        'attributes': attributes,
-        'methods': methods,
-        'module': obj_module}
+    result = {'type': obj_type,'attributes': attributes,
+              'methods': methods, 'module': obj_module}
 
     return result
 
@@ -32,6 +32,7 @@ class SomeClass:
 
 
 my_obj = SomeClass(10, 15)
-
-obj_info = introspection_info(my_obj)
+obj_info = introspection_info(35)
+obj_info1 = introspection_info(my_obj)
 print(obj_info)
+print(obj_info1)
